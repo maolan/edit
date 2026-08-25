@@ -1,6 +1,6 @@
 [package]
 name = "maolan-editor"
-version = "0.0.1"
+version = "0.0.2"
 edition = "2024"
 description = "Simple audio editor for Maolan audio files"
 license = "BSD-2-Clause"

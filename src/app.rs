@@ -25,8 +25,8 @@ use maolan_widgets::iced::{
 };
 use maolan_widgets::iced_aw::menu::DrawPath;
 use maolan_widgets::iced_fonts::lucide::{
-    arrow_down, arrow_up, fast_forward, play, redo, rewind, square, trending_down, trending_up,
-    undo,
+    arrow_down, arrow_right, arrow_up, fast_forward, flag, play, redo, rewind, square,
+    trending_down, trending_up, undo,
 };
 use maolan_widgets::waveform::SampleWaveform;
 use maolan_widgets::{
@@ -2031,6 +2031,11 @@ fn toolbar_with_playhead_options(
             play_button,
             toolbar_button(square().size(16), "Stop", Message::Stop),
             toolbar_button(fast_forward().size(16), "Go to end", Message::GoToEnd),
+            toolbar_button(
+                arrow_right().size(16),
+                "Next zero crossing",
+                Message::JumpToNextZeroCrossing
+            ),
             container(text(label).size(14))
                 .padding([4, 8])
                 .style(if playing {
@@ -2040,6 +2045,11 @@ fn toolbar_with_playhead_options(
                 }),
             toolbar_button(trending_up().size(16), "Fade in", Message::FadeIn),
             toolbar_button(trending_down().size(16), "Fade out", Message::FadeOut),
+            toolbar_button(
+                flag().size(16),
+                "Detect markers",
+                Message::DetectMarkersDialog
+            ),
             toolbar_button(
                 arrow_up().size(16),
                 "Increase volume",
