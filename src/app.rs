@@ -3423,6 +3423,7 @@ async fn prepare_engine_document(
             audio_outs: request.channels,
             midi_outs: 0,
             folder: false,
+            mixosc_addr: None,
         },
     )
     .await?;
